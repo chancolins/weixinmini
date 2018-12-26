@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+<view class="section tc">
+  <video src="{{src}}"></video>
+  <view class="btn-area">
+    <button bindtap="bindButtonTap">播放视频</button>
+  </view>
+</view>
+<view class="section tc">
+  <video src="{{src1}}"></video>
+  <view class="btn-area">
+    <button bindtap="bindButtonTap1">上传播放视频</button>
+  </view>
+</view>
+</view>

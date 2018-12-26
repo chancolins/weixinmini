@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">  
+  <view class="top">
+    <view>打开地图，显示当前位置</view>
+  </view>
+</view>

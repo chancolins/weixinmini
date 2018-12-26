@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+<view class="btn-area">
+  <view class="body-view">
+    <text>{{text}}</text>
+  </view>
+</view>
+
+<form bindsubmit="formBindsubmit" bindreset="formReset">
+<view class="section">
+  <input name="q" placeholder="输入你的问题...." value="{{tt}}"/> 
+  <button formType="submit">发送</button>
+</view>
+</form>
+</view>

@@ -1,0 +1,62 @@
+1、创建投票主题和投票选项
+api：
+https://test1.yinchengpai.com/vote/add?openid=xxoo&title=title&single=0&item=item&item1=item1
+
+参数：
+openid：用户号
+title: 投票的标题，不能为空
+single：单选多选，不能为空，0：多选，1：单选
+item 和 item 开头的参数为投票选项，不可为空
+
+返回值：
+{"code":1,"data":{},"message":"提交成功"}
+code: 返回代码，1：成功，0：失败
+message: 返回信息
+
+2、根据id获取投票主题和投票选项（主要用于显示或者修改）
+api：
+https://test1.yinchengpai.com/vote/detail?voteid=1
+
+参数：
+voteid： 投票主题id
+
+返回值：
+{"code":1,"data":{"voteItems":[{"item":"强大无比","update_time":null,"create_time":"2017-02-07 17:33:43","id":1,"vote_id":1},{"item":"一般般吧","update_time":null,"create_time":"2017-02-07 17:33:49","id":2,"vote_id":1},{"item":"弱爆了","update_time":null,"create_time":"2017-02-07 17:33:52","id":3,"vote_id":1}],"vote":{"update_time":null,"unionid":null,"create_time":"2017-02-07 17:32:49","openid":"xxoo","qr_code":null,"id":1,"title":"小程序功能强大吗？","single_select":1}},"message":"查询成功"}
+
+
+3、根据openid获取用户所有的投票主题
+https://test1.yinchengpai.com/vote/list?openid=xxoo
+
+返回值：
+{"code":1,"data":{"votes":[{"update_time":null,"unionid":null,"create_time":"2017-02-07 17:32:49","openid":"xxoo","qr_code":null,"id":1,"title":"小程序功能强大吗？","single_select":1}]},"message":"查询成功"}
+
+
+4、查询投票结果，和detail类似、不过包括了counts投票数，主要用于显示结果
+api：
+https://test1.yinchengpai.com/vote/result?voteid=1
+
+参数：
+voteid： 投票主题id
+
+{"code":1,"data":{"vote":{"update_time":null,"unionid":null,"create_time":"2017-02-07 17:32:49","openid":"xxoo","qr_code":null,"id":1,"title":"小程序功能强大吗？","single_select":1},"results":[{"item":"强大无比","update_time":null,"create_time":"2017-02-07 17:33:43","counts":1,"id":1,"vote_id":1},{"item":"一般般吧","update_time":null,"create_time":"2017-02-07 17:33:49","counts":3,"id":2,"vote_id":1},{"item":"弱爆了","update_time":null,"create_time":"2017-02-07 17:33:52","counts":2,"id":3,"vote_id":1}]},"message":"查询成功"}
+投票选项：{"item":"一般般吧","update_time":null,"create_time":"2017-02-07 17:33:49","counts":3,"id":2,"vote_id":1}， item：投票项，counts：总投票次数
+
+5、投票
+api：
+https://test1.yinchengpai.com/vote/vote?openid=xxoo&voteid=1&vote_item_id=2&vote_item_id1=3
+
+参数：
+openid：用户号
+voteid： 投票主题id
+vote_item_id：投票选项id，vote_item_id开头的参数是多选
+
+返回值：
+{"code":0,"data":null,"message":"你已经投过票了！"}
+{"code":1,"data":null,"message":"投票成功了！"}
+
+
+
+以上UTF-8编码, post/get都可以。
+
+
+

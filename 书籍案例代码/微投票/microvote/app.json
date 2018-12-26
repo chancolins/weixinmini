@@ -1,0 +1,16 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/createvote/createvote",
+    "pages/myvote/myvote",
+    "pages/voteitem/voteitem",
+    "pages/voteresult/voteresult"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "微投票",
+    "navigationBarTextStyle":"black"
+  }
+}
