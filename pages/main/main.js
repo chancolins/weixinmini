@@ -15,14 +15,13 @@ Page({
   //绑定车牌号
   bindCarNumbers: function() {
     var openId = wx.getStorageSync('openId')
+    
     var that = this
     //判断是否已获取该用户的openId
     if (openId) {
-      console.log('什么情况')
+      console.log('什么情况' + openId)
       wx.getUserInfo({
-
         success: function (res) {
-          
           that.setData({
             nickName: res.userInfo.nickName,
             avatarUrl: res.userInfo.avatarUrl,
@@ -42,7 +41,7 @@ Page({
           console.log(res.code)
           if (res.code) {
             wx.request({
-              url: 'http://192.168.4.14/wx/login',//待填
+              url: 'http://2z330q6958.imwork.net/wx/login',
               data: {
                 code: res.code,
                 encryptedData: res.encryptedData,
@@ -54,7 +53,7 @@ Page({
               },
               success: function (res) {
                 wx.setStorageSync('openId', res.data.openId)
-                console.log("获取到的openid：" + res.data.toString)
+                console.log("获取到的openid：" + res.data.toString())
               },
               fail: function(res) {
                 console.log(res.statusCode)
@@ -82,7 +81,7 @@ Page({
                                     withCredentials: true,
                                     success: function (res_user) {
                                       wx.request({
-                                        url: 'http://192.168.4.14/wx/login',//待填
+                                        url: 'http://2z330q6958.imwork.net/wx/login',
                                         data: {
                                           code: res_login.code,
                                           encryptedData: res_login.encryptedData,
@@ -98,7 +97,7 @@ Page({
                                             avatarUrl: res.data.avatarUrl
                                           })
                                           wx.setStorageSync('openId', res.data.openId)
-                                          console.log("获取到的openid：" + res.data.toString)
+                                          console.log("获取到的openid：" + res.data)
 
                                         }
                                       })
@@ -127,7 +126,7 @@ Page({
   },
   
   onLoad: function () {
-    
+    wx.clearStorageSync()
   },
   showInput: function () {
     this.setData({
