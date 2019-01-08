@@ -31,4 +31,7 @@
     <button form-type='submit'>Submit</button>
     <button form-type='reset'>Reset</button>
   </view>
+  <!--页面视图-->
+  <view> Hello {{name}}! </view>
+  <button bindtap="changeName"> Click me!</button>
 </form>

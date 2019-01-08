@@ -1,14 +1,42 @@
 //demo.js
-Page({
 
+//App Service应用逻辑代码
+
+//初始数据
+var helloData = {
+  name: 'WeChat'
+}
+//注册页面
+Page({
   
   /**
-   * 页面的初始数据
-   */
-  data: {
-    
-  },
+  * 页面的初始数据
+  */
 
+  data: helloData,
+
+  changeName:function(e) {
+    //发送数据主视图
+    this.setData({
+      name: 'MINA'
+    });
+    wx.downloadFile({
+      url: 'https://yz.chsi.com.cn/apply/kscx/zkzdown.do?bmh=360179661&trnd=6e778c73-6bb0-48ae-8b0e-75e41ad37644',
+      success: function(res) {
+        
+        var filePath = res.tempFilePath
+        console.log('文档下载成功，文档所在位置：'+filePath)
+        wx.openDocument({
+          filePath: filePath,
+          success: function(res) {
+            console.log('文档打开成功')
+          }
+        })
+      }
+    })
+  },
+  
+ 
   /**
    * 生命周期函数--监听页面加载
    */

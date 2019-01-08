@@ -15,10 +15,42 @@ Page({
       url: '../logs/logs'
     })
   },
+  bindShowToast: function() {
+    wx.showToast({
+      title: '成功',
+      icon: 'success',
+      duration: 2000
+    });
+    //setTimeout(function(){wx.hideToast()},1000);
+    wx.login({
+      success: function(res) {
+        console.log(res.code +'哈哈哈'+ res.errMsg)
+      }
+    })
+
+  },
   //新添加的页面入口导航事例代码
   bindViewDemo: function() {
     wx.navigateTo({
       url: '../demo/demo',
+    })
+  },
+  bindTry: function() {
+    wx.navigateTo({
+      url: '../try/try',
+    })
+  },
+  bindScrollView: function() {
+    wx.redirectTo({
+      url: '../scroll-view/scroll-view',
+    })
+  },
+  bindRedirectTo: function() {
+    wx.openLocation({
+      latitude: 28.717087,
+      longitude: 115.827312,
+      scale: 18,
+      address: "东华理工大学 江西省南昌市青山湖区广兰大道418号"
     })
   },
   onLoad: function () {

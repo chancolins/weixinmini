@@ -1,0 +1,21 @@
+/* pages/scroll-view/scroll-view.wxss */
+#red {
+  background-color: red;
+  height: 100px;
+  width: 600px;
+}
+#green {
+  background-color: green;
+  height: 100px;
+  width: 600px;
+}
+#blue {
+  background-color: blue;
+  height: 100px;
+  width: 600px;
+}
+#yellow {
+  background-color: yellow;
+  height: 100px;
+  width: 600px;
+}

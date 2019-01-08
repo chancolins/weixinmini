@@ -1,0 +1,25 @@
+/* pages/main/main.wxss */
+.section-search{
+  border-style: solid;
+  border-width: 1px;
+  border-color: #afa6a6;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin: 0px 5px 10px 5px;
+
+}
+.input{
+  width: 70%
+}
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
