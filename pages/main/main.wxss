@@ -8,18 +8,15 @@
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   margin: 0px 5px 10px 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
 }
 .input{
-  width: 70%
+  width: 70%;
+  margin: 0px 5px 0px 5px;
 }
-.searchbar-result{
-    margin-top: 0;
-    font-size: 14px;
-}
-.searchbar-result:before{
-    display: none;
-}
-.weui-cell{
-    padding: 12px 15px 12px 35px;
+.other-button-hover{
+  background-color: red;
 }
