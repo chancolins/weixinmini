@@ -1,18 +1,41 @@
 <!--pages/map/map.wxml-->
-<view class="page-body">
-  <view class="page-secton page-section-gap">
+<view class="page-body" style='height: 100%;'>
+  <view class="page-section page-section-gap" style='height: 100%;'>
+    <view class="search-section">
+      <input class="search-input" placeholder='搜目的地' bindinput='bindSearchInput' confirm-type='done'>
+      </input>
+      <image class="search-image" src='../images/search.png' bindtap='bindSearchDestination'/>
+    </view>
+    
     <map
       id="myMap"
-      style="width: 100%; height: 350px;"
+      style="width: 100%; height: 100%;"
       latitude='{{latitude}}'
       longitude='{{longitude}}'
       markers='{{markers}}'
-      covers='{{covers}}'
       show-location='ture'
+      scale='{{mapScale}}'
+      circles='{{circles}}'
+      bindmarkertap='bindParkMarkerTap'
+      
     ></map>
 
   </view>
-  <view class="info">
-    <text>{{text}}</text>
+  <!--customized dialog-->
+  <view class="modal-mask" wx:if="{{isShowModal}}" catchtap='bindMaskTap'>
+    <view class="modal-dialog">
+      <view class="place-info">
+        <view class="place-name" >{{placeName}}</view>
+        <view class="park-info">
+          <image class="park-icon" src='../images/p.png'></image>
+          <view class="park-count">{{parkCount}}</view>
+        </view>
+      </view>
+      <text class="address">{{address}}</text>
+      <view class="btn-area">
+        <button class="btn" bindtap='bindNavigateTo'>导航</button>
+        <button class="btn" bindtap='bindAppoint'>预约</button>
+      </view>
+    </view>
   </view>
 </view>

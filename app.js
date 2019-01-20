@@ -29,11 +29,36 @@ App({
               }
             }
           })
+        } else {
+          //若没授权，则请求授权
+          wx.authorize({
+            scope: 'scope.userInfo',
+            success() {
+              wx.showToast({
+                title: '授权成功',
+                icon: 'sucess',
+                duration: 1500
+              })
+              wx.getUserInfo({
+                success: res => {
+                  // 可以将 res 发送给后台解码出 unionId
+                  this.globalData.userInfo = res.userInfo
+
+                  // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+                  // 所以此处加入 callback 以防止这种情况
+                  if (this.userInfoReadyCallback) {
+                    this.userInfoReadyCallback(res)
+                  }
+                }
+              })
+            }
+          })
         }
       }
     })
   },
   globalData: {
     userInfo: null,
+    
   }
 })
