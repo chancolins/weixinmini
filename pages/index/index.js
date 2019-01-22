@@ -12,9 +12,7 @@ Page({
   
   //事件处理函数
   bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+    
   },
   bindShowToast: function() {
     wx.showToast({
@@ -32,19 +30,13 @@ Page({
   },
   //新添加的页面入口导航事例代码
   bindViewDemo: function() {
-    wx.navigateTo({
-      url: '../demo/demo',
-    })
+    
   },
   bindTry: function() {
-    wx.navigateTo({
-      url: '../try/try',
-    })
+    
   },
   bindScrollView: function() {
-    wx.redirectTo({
-      url: '../scroll-view/scroll-view',
-    })
+    
   },
   bindRedirectTo: function() {
     wx.openLocation({

@@ -1,8 +1,7 @@
 {
-  "usingComponents": {},
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#F8F8F8",
-  "navigationBarTitleText": "用户中心",
+  "navigationBarTitleText": "绑定手机号",
   "navigationBarTextStyle": "black"
-
+  
 }

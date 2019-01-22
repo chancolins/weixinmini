@@ -1,4 +1,5 @@
 // pages/map/map.js
+var app = getApp()
 var locationBlueIconUrl = '../images/blue_rectangle.png'; //空车位图标URL
 var locationRedIconUrl = '../images/car.png'; //非空车位图标URL
 var destinationIconUrl = '../images/location.png'; //定位图标
@@ -156,8 +157,10 @@ Page({
     }
     return [tempMarkers,tempPoints]
   },
+
+
   //用于将所有坐标显示在一个视野中
-  includePoints: function(points){
+  mapIncludePoints: function(points){
     this.mapContext.includePoints({
       points: points,
       padding: [40, 40, 40, 40],
@@ -177,8 +180,8 @@ Page({
     console.log(tempMarkers)
     console.log(tempPoints)
     //把所有坐标都显示在同一视野中
-    this.includePoints(tempPoints)
-    if(this.data.searchInputVal == "东华"){
+    this.mapIncludePoints(tempPoints)
+    if(this.data.searchInputVal == ""){
       this.setData({
         //mapScale: 18,
         markers: tempMarkers
@@ -198,6 +201,10 @@ Page({
     console.log("you touched an icon whose id is" + touchedIconId)
     var tempInfo = null
     if(destinationOrPark == 0){
+      //显示详情窗体
+      this.setData({
+        isShowModal: true
+      })
       tempInfo = this.data.destinationsInfo
       for(var number = 0; number < tempInfo.length; number++ ){
         if (tempInfo[number].id == touchedIconId){
@@ -208,7 +215,7 @@ Page({
             markers: tempMarkers,
             mapScale: 21
           })
-          this.includePoints(tempPoints)
+          this.mapIncludePoints(tempPoints)
           destinationOrPark = 1 //点击目的地图标后，以后被点击的应该是车位图标
           return
         }
@@ -232,6 +239,7 @@ Page({
       isShowModal: false
     })
     console.log("masktap...")
-  }
+  },
 
+ 
 })

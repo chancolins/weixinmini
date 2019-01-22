@@ -1,17 +1,15 @@
 {
   "pages": [
     "pages/map/map",
+    "pages/user/user",
+    "pages/firsttime/firsttime",
+    
+    "pages/userphone/userphone",
+    
     "pages/carnumber/carnumber",
     "pages/index/index",
     "pages/home/home",
-    
-    
-    "pages/logs/logs",
-    "pages/demo/demo",
-    "pages/scroll-view/scroll-view",
-    "pages/try/try",
-    
-    "pages/user/user"
+    "pages/try/try"
     
   ],
   "window": {
@@ -21,7 +19,6 @@
     "navigationBarTextStyle": "black",
     "backgroundColor": "#eeeeee",
     "enablePullDownRefresh": false
-    
   },
   "tabBar": {
     "list": [
